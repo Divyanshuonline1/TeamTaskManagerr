@@ -5,4 +5,4 @@ nixPkgs = ["maven", "jdk17"]
 cmds = ["cd backend && chmod +x mvnw && ./mvnw clean package -DskipTests"]
 
 [start]
-cmd = "java -jar backend/target/*.jar"
+cmd = "cd backend && ./mvnw spring-boot:run"
