@@ -1,0 +1,248 @@
+/* member-report.css */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* ── Navbar ── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  box-shadow: 0 2px 12px rgba(102, 126, 234, 0.35);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h2 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.navbar a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.navbar a:hover {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+.navbar div button {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 0.4rem;
+}
+
+.navbar div button:hover {
+  background: rgba(255,255,255,0.28);
+}
+
+/* ── Page Wrapper ── */
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ── Card ── */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Profile Card ── */
+.card #name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.3rem;
+}
+
+.card #email {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1.2rem;
+}
+
+/* ── Badges ── */
+#role,
+#badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+#role {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+#badge {
+  background: #dcfce7;
+  color: #16a34a;
+  margin-left: 0.6rem;
+}
+
+/* ── Stats Grid ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.3rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+  border-top: 4px solid #667eea;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:nth-child(2) { border-top-color: #a855f7; }
+.stat-card:nth-child(3) { border-top-color: #22c55e; }
+.stat-card:nth-child(4) { border-top-color: #f59e0b; }
+.stat-card:nth-child(5) { border-top-color: #3b82f6; }
+.stat-card:nth-child(6) { border-top-color: #ef4444; }
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1;
+}
+
+/* ── Completion Rate Card ── */
+.card h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+/* Progress Bar Track */
+.progress-track {
+  width: 100%;
+  height: 14px;
+  background: #e2e8f0;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #667eea, #22c55e);
+  border-radius: 30px;
+  transition: width 0.6s ease;
+}
+
+#rate {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #667eea;
+  margin-bottom: 0.8rem;
+}
+
+.card h2:last-child {
+  font-size: 1rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.card h2:last-child span {
+  color: #1e293b;
+  font-weight: 800;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .navbar a {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card #name {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #role,
+  #badge {
+    display: block;
+    margin: 0.3rem 0;
+    text-align: center;
+  }
+}

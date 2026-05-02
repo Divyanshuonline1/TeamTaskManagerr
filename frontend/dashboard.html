@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>⚡ Team Task Manager</h2>
+    <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="members.html">Members</a>
+        <a href="profile.html">Profile</a>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+
+<section class="dashboard">
+
+    <div class="welcome-banner">
+        <div>
+            <h1 id="welcomeMsg">Welcome 👋</h1>
+            <p id="welcomeSub">Here's your task overview for today.</p>
+        </div>
+        <span class="date" id="todayDate"></span>
+    </div>
+
+    <h2 class="section-title">Overview</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon" style="background:#ede9fe;">📁</div>
+            <div class="card-info">
+                <h3>Total Projects</h3>
+                <p id="totalProjects">0</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon" style="background:#dbeafe;">📋</div>
+            <div class="card-info">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon" style="background:#fef9c3;">⏳</div>
+            <div class="card-info">
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon" style="background:#dcfce7;">🔄</div>
+            <div class="card-info">
+                <h3>In Progress</h3>
+                <p id="inProgressTasks">0</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon" style="background:#d1fae5;">✅</div>
+            <div class="card-info">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+        </div>
+        <div class="card overdue">
+            <div class="card-icon" style="background:#fee2e2;">🔥</div>
+            <div class="card-info">
+                <h3>Overdue</h3>
+                <p id="overdueTasks">0</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/api.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/dashboard.js"></script>
+<script>
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('open');
+    }
+
+    const date = new Date();
+    document.getElementById('todayDate').textContent = date.toLocaleDateString('en-IN', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+</script>
+
+</body>
+</html>

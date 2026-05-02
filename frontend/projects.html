@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Command Center</title>
+    <link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>Team Task Manager</h2>
+
+    <div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="members.html">Members</a>
+        <a href="profile.html">Profile</a>
+        <button onclick="logout()">Logout</button>
+    </div>
+</nav>
+
+<section class="project-layout">
+
+    <!-- Left Panel -->
+    <aside id="projectPanel" class="project-panel">
+        <h2>Create Project</h2>
+
+        <form onsubmit="createProject(event)">
+
+    <input type="text"
+           id="name"
+           placeholder="Project Name"
+           required>
+
+    <textarea id="description"
+              placeholder="Description"></textarea>
+
+    <select id="priority" required>
+        <option value="" disabled selected>Select Priority</option>
+        <option value="LOW">LOW</option>
+        <option value="MEDIUM">MEDIUM</option>
+        <option value="HIGH">HIGH</option>
+    </select>
+
+    <select id="riskLevel" required>
+        <option value="" disabled selected>Select Risk Level</option>
+        <option value="LOW">LOW RISK</option>
+        <option value="MEDIUM">MEDIUM RISK</option>
+        <option value="HIGH">HIGH RISK</option>
+    </select>
+
+    <input type="number"
+           id="expectedTeamSize"
+           placeholder="Expected Team Size">
+
+    <input type="number"
+           id="budget"
+           placeholder="Budget">
+
+    <input type="date" id="startDate">
+    <input type="date" id="deadline">
+
+    <textarea id="notes"
+              placeholder="Notes"></textarea>
+
+    <button type="submit">
+        Create Project
+    </button>
+
+</form>
+
+    </aside>
+
+    <!-- Right Content -->
+    <main>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Projects</h3>
+                <h1 id="totalProjects">0</h1>
+            </div>
+
+            <div class="stat-card">
+                <h3>Planning</h3>
+                <h1 id="planningProjects">0</h1>
+            </div>
+
+            <div class="stat-card">
+                <h3>Active</h3>
+                <h1 id="activeProjects">0</h1>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <h1 id="completedProjects">0</h1>
+            </div>
+        </div>
+
+        <div id="projectList" class="project-grid"></div>
+
+    </main>
+
+</section>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/api.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/projects.js"></script>
+
+</body>
+</html>

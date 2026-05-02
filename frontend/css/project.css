@@ -1,0 +1,379 @@
+/* project.css */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* ── Navbar ── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  box-shadow: 0 2px 12px rgba(102, 126, 234, 0.35);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h2 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.navbar a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.navbar a:hover {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+.navbar div button {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 0.4rem;
+}
+
+.navbar div button:hover {
+  background: rgba(255,255,255,0.28);
+}
+
+/* ── Two Column Layout ── */
+.project-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  align-items: start;
+}
+
+/* ── Left Panel ── */
+.project-panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.6rem;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+  position: sticky;
+  top: 80px;
+}
+
+.project-panel h2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  margin-bottom: 1.2rem;
+}
+
+.project-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ── Inputs / Textarea / Select ── */
+.project-panel input[type="text"],
+.project-panel input[type="number"],
+.project-panel input[type="date"],
+.project-panel textarea,
+.project-panel select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #1e293b;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.project-panel input:focus,
+.project-panel textarea:focus,
+.project-panel select:focus {
+  border-color: #667eea;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.12);
+}
+
+.project-panel input::placeholder,
+.project-panel textarea::placeholder {
+  color: #a0aec0;
+  font-size: 0.85rem;
+}
+
+.project-panel textarea {
+  resize: vertical;
+  min-height: 85px;
+}
+
+.project-panel select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  cursor: pointer;
+}
+
+/* ── Date input label hint ── */
+.project-panel input[type="date"] {
+  color: #64748b;
+}
+
+/* ── Submit Button ── */
+.project-panel form button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.35);
+  transition: opacity 0.2s, transform 0.2s;
+  margin-top: 0.3rem;
+}
+
+.project-panel form button[type="submit"]:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── Stats Grid ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.3rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+  border-top: 4px solid #667eea;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:nth-child(2) { border-top-color: #f59e0b; }
+.stat-card:nth-child(3) { border-top-color: #22c55e; }
+.stat-card:nth-child(4) { border-top-color: #764ba2; }
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1;
+}
+
+/* ── Project Grid ── */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .project-layout {
+    grid-template-columns: 260px 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .navbar a {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.5rem;
+  }
+
+  .project-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-panel {
+    position: static;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ── Project Card (JS-rendered) ── */
+.project-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.3rem 1.4rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  border-left: 4px solid #667eea;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3,
+.project-card h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.15rem;
+}
+
+.project-card > p:first-of-type {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 0.4rem;
+}
+
+.project-card p {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.project-card p strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* ── Priority ── */
+.project-card .priority-HIGH   { color: #ef4444; font-weight: 700; }
+.project-card .priority-MEDIUM { color: #f59e0b; font-weight: 700; }
+.project-card .priority-LOW    { color: #22c55e; font-weight: 700; }
+
+/* ── Risk ── */
+.project-card .risk-HIGH   { color: #ef4444; font-weight: 700; }
+.project-card .risk-MEDIUM { color: #f59e0b; font-weight: 700; }
+.project-card .risk-LOW    { color: #22c55e; font-weight: 700; }
+
+/* ── Status ── */
+.project-card .status-ACTIVE    { color: #22c55e; font-weight: 700; }
+.project-card .status-PLANNING  { color: #3b82f6; font-weight: 700; }
+.project-card .status-COMPLETED { color: #764ba2; font-weight: 700; }
+.project-card .status-ON_HOLD   { color: #f59e0b; font-weight: 700; }
+
+/* ── Progress Bar ── */
+.project-card .progress-track {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 30px;
+  overflow: hidden;
+  margin: 0.4rem 0;
+}
+
+.project-card .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 30px;
+  transition: width 0.5s ease;
+}
+
+/* ── Members / Tasks Buttons ── */
+.project-card .card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.project-card button {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  color: #475569;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.project-card button:hover {
+  background: #ede9fe;
+  border-color: #667eea;
+  color: #667eea;
+}

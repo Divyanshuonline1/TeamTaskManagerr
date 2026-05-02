@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link rel="stylesheet" href="css/task.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>Team Task Manager</h2>
+
+    <div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="projects.html">Projects</a>
+        <a href="members.html">Members</a>
+        <a href="profile.html">Profile</a>
+        <button onclick="logout()">Logout</button>
+    </div>
+</nav>
+
+<section class="task-layout">
+
+    <!-- Left Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <h2>Assign Task</h2>
+
+        <form onsubmit="createTask(event)">
+            <input id="title" type="text" placeholder="Task title" required>
+
+            <textarea id="description" placeholder="Description"></textarea>
+
+            <select id="projectId" required></select>
+
+            <select id="assignedUserId" required></select>
+
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="FRONTEND">Frontend</option>
+                <option value="BACKEND">Backend</option>
+                <option value="DATABASE">Database</option>
+                <option value="TESTING">Testing</option>
+                <option value="DESIGN">Design</option>
+                <option value="DEVOPS">DevOps</option>
+                <option value="DOCUMENTATION">Documentation</option>
+            </select>
+
+            <select id="priority">
+                <option value="LOW">LOW</option>
+                <option value="MEDIUM">MEDIUM</option>
+                <option value="HIGH">HIGH</option>
+            </select>
+
+            <input id="estimatedHours" type="number" placeholder="Estimated hours">
+
+            <input id="dueDate" type="date">
+
+            <textarea id="notes" placeholder="Notes / instructions"></textarea>
+
+            <button type="submit">Assign Task</button>
+        </form>
+    </div>
+
+    <!-- Right Content -->
+    <div class="task-right">
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total</h3>
+                <h1 id="totalCount">0</h1>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <h1 id="pendingCount">0</h1>
+            </div>
+
+            <div class="stat-card">
+                <h3>In Progress</h3>
+                <h1 id="progressCount">0</h1>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <h1 id="completedCount">0</h1>
+            </div>
+        </div>
+
+        <div id="taskList" class="task-grid"></div>
+
+    </div>
+
+</section>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/api.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/tasks.js"></script>
+
+</body>
+</html>

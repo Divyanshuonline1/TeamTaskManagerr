@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members</title>
+    <link rel="stylesheet" href="css/members.css">
+
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>Team Task Manager</h2>
+
+    <div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="projects.html">Projects</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="profile.html">Profile</a>
+        <button onclick="logout()">Logout</button>
+    </div>
+</nav>
+
+<section class="project-page">
+
+    <div class="top-bar">
+        <h1>Team Management</h1>
+    </div>
+
+    <div class="modal-box" style="max-width:700px;margin:auto;">
+        <form onsubmit="addMember(event)">
+
+            <select id="projectSelect" required>
+                <option value="">Select Project</option>
+            </select>
+
+            <select id="userSelect" required>
+                <option value="">Select Member</option>
+            </select>
+
+            <button type="submit">
+                Add Member
+            </button>
+        </form>
+
+        <button
+            style="margin-top:10px"
+            onclick="loadProjectMembers()"
+        >
+            View Members
+        </button>
+
+        <div id="memberList" style="margin-top:30px;"></div>
+
+        <hr style="margin:40px 0;">
+
+        <h2>All Users</h2>
+        <br>
+
+        <div id="allUsers" class="project-grid"></div>
+
+    </div>
+
+</section>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/api.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/members.js"></script>
+
+</body>
+</html>

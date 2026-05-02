@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+<link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>Team Task Manager</h2>
+
+    <div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="projects.html">Projects</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="members.html">Members</a>
+        <button onclick="logout()">Logout</button>
+    </div>
+</nav>
+
+<section class="profile-section">
+    <div class="profile-card">
+
+        <div class="profile-avatar" id="avatarInitials">--</div>
+
+        <h1>My Profile</h1>
+        <div class="profile-divider"></div>
+
+        <h2 id="name">-</h2>
+        <p id="email">-</p>
+
+        <div class="profile-role">
+            <h3>Role:</h3>
+            <span id="role">-</span>
+        </div>
+
+    </div>
+</section>
+
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/profile.js"></script>
+
+</body>
+</html>
