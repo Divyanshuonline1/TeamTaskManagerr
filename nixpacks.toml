@@ -5,4 +5,4 @@ nixPkgs = ["maven", "jdk17"]
 cmds = ["cd backend && chmod +x mvnw && ./mvnw clean package -DskipTests"]
 
 [start]
-cmd = "cd backend && java -jar target/*.jar"
+cmd = "java -jar backend/target/*.jar"
